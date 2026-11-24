@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ</title>
+</head>
+<body>
+  <h1>Frequently Asked Questions</h1>
+
+  <h3><a href="#" data-target="a1">What is this website about?</a></h3>
+  <p id="a1" hidden>This website provides helpful information and resources about our products and services.</p>
+
+  <h3><a href="#" data-target="a2">How do I create an account?</a></h3>
+  <p id="a2" hidden>Click the "Sign Up" button and enter your credentials.</p>
+
+  <h3><a href="#" data-target="a3">I forgot my password. What should I do?</a></h3>
+  <p id="a3" hidden>Click "Forgot password" and follow the instructions sent to your email to reset it.</p>
+
+  <h3><a href="#" data-target="a4">How can I contact support?</a></h3>
+  <p id="a4" hidden>You can reach our support team by email at support@example.com. </p>
+
+  <h3><a href="#" data-target="a5">sunny innit?</a></h3>
+  <p id="a5" hidden>yes.</p>
+
+  >
+
+  <script>
+    document.querySelectorAll("a[data-target]").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var answer = document.getElementById(link.dataset.target);
+        answer.hidden = !answer.hidden;
+      });
+    });
+  </script>
+</body>
+</html>

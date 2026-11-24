@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bar Chart</title>
+</head>
+<body>
+  <canvas id="c" width="420" height="320"></canvas>
+  <script>
+    var g = document.getElementById("c").getContext("2d");
+    var names = ["Classical Music", "Alternative Rock", "Pop", "Jazz"];
+    var vals = [16, 12, 18, 33];
+    var cols = ["#a45ba5", "#66b3c6", "#bccd7f", "#e8954d"];
+    g.font = "10px sans-serif";
+
+    // chart grid + y-axis labels
+    for (var v = 0; v <= 35; v += 5) {
+      var y = 230 - v * 5;
+      g.fillStyle = "#000";
+      g.fillText(v, 30, y + 3);
+      g.beginPath(); g.moveTo(50, y); g.lineTo(340, y); g.stroke();
+    }
+
+    // bars
+    names.forEach(function (n, i) {
+      g.fillStyle = cols[i];
+      g.fillRect(60 + i * 60, 230 - vals[i] * 5, 60, vals[i] * 5);
+    });
+
+    // data series name
+    g.fillStyle = "#000";
+    g.fillText("Vinyl records", 150, 248);
+
+    // legend
+    var x = 40;
+    names.forEach(function (n, i) {
+      g.fillStyle = cols[i];
+      g.fillRect(x, 278, 10, 10);
+      g.fillStyle = "#000";
+      g.fillText(n, x + 14, 287);
+      x += g.measureText(n).width + 34;
+    });
+  </script>
+</body>
+</html>

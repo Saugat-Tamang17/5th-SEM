@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User details</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    form div { margin-bottom: 12px; }
+    input[type=text], input[type=password], input[type=email], select { width: 250px; padding: 5px; }
+    #error { color: red; }
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid black; padding: 6px; }
+  </style>
+</head>
+<body>
+
+  <h1>User Details [Question Number 3]</h1>
+  <form id="userdetails">
+
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+    </div>
+
+    <div>
+      <label for="age">Age:</label>
+      <input type="Number" id="age" name="age">
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- hidden until the form is submitted -->
+  <div id="result" style="display:none">
+    <table>
+      <thead>
+        <tr><th colspan="2">Submitted Data</th></tr>
+      </thead>
+      <tbody id="resultBody"></tbody>
+    </table>
+  </div>
+
+<script>
+  const form = document.getElementById('userdetails');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+
+    document.getElementById('resultBody').innerHTML =
+      '<tr><th>name</th><td>' + form.name.value + '</td></tr>' +
+      '<tr><th>Email</th><td>' + form.email.value + '</td></tr>' +
+      '<tr><th>Age</th><td>' + form.age.value + '</td></tr>';
+    document.getElementById('result').style.display = 'block';
+  });
+</script>
+</body>
+</html>

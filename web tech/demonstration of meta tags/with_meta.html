@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+chj  <meta charset="UTF-8">
+65879
+  
+  <title>Learn HTML Meta Tags | Beginner Guide</title>
+  <meta name="description" content="A practical beginner guide to HTML meta tags: SEO, character encoding and viewport settings, with live examples.">
+
+  <meta name="keywords" content="html, meta tags, seo, viewport, charset">
+  <meta name="author" content="Your Name">
+  <meta name="robots" content="index,follow"> 
+  
+  <meta property="og:title" content="Learn HTML Meta Tags">
+  <meta property="og:description" content="SEO, charset and viewport explained with examples.">
+  <meta property="og:image" content="https://example.com/preview.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#4f46e5">
+
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f9; }
+    .card { background: #fff; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; }
+    h1 { font-size: 2rem; }
+
+    /* Only works properly on phones BECAUSE of the viewport tag */
+    @media (max-width: 600px) {
+      body { background: #dcfce7; }
+      h1 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1> Page WITH meta tags</h1>
+    <p>Special characters: café, ?20, ? ?quotes?, ??????, ??, ??</p>
+    <p>On a phone (or DevTools mobile mode) this page fills the screen, text is readable and the background turns <b>green</b>.</p>
+  </div>
+</body>
+</html>

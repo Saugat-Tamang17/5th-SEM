@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Technology Lab 1 - Cover Page</title> <!-- fixed: text shown on the browser tab -->
+  <style>
+    body { font-family: "Times New Roman", Times, serif; color: #000; background: #fff; margin: 0; padding: 40px 20px; } /* page font and outer space */
+    .page { max-width: 800px; margin: 0 auto; min-height: calc(100vh - 80px); display: flex; flex-direction: column; } /* centers the page, stacks header/main/footer vertically, 80px = body top + bottom padding */
+    header { display: flex; justify-content: space-between; gap: 20px; } /* places the two columns and the divider in one row */
+    .col { flex: 1; text-align: center; } /* each column takes equal width, text centered */
+    header h1, header h2 { font-size: 1.6rem; margin: 0 0 6px; letter-spacing: 1px; } /* both college names look the same */
+    header p { margin: 2px 0; font-size: 0.95rem; } /* address and contact lines */
+    .divider { width: 3px; background: #000; } /* the black vertical line between columns */
+    main { text-align: center; margin: 40px 0; } /* logo and titles centered in the middle section */
+    main h2 { margin: 18px 0; font-size: 1.6rem; }
+    main h3 { margin: 14px 0; font-size: 1.3rem; }
+    footer { display: flex; justify-content: space-between; margin-top: auto; } /* two boxes side by side, auto margin pushes footer to the bottom */
+    .box { width: 30%; } /* narrower boxes leave more space between the two sections */
+    .box h3 { margin: 0 0 8px; } /* box heading */
+    .box p { margin: 4px 0; line-height: 1.6; }
+    .line { border-bottom: 1.5px solid #000; height: 50px; } /* blank space with a line for the signature */
+    @media (max-width: 600px) { header, footer { flex-direction: column; gap: 20px; } .divider { display: none; } .box { width: 100%; } } /* stacks sections on small screens */
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header> <!-- top section: college name, address, phone -->
+      <div class="col">
+        <h1>ST. XAVIER’S COLLEGE</h1>
+        <p>MAITIGHAR, KATHMANDU, NEPAL</p>
+        <p>Post Box: 7437</p>
+        <p>Contact: 4221365, 4244636</p>
+        <p>Email: ktm@sxc.edu.np</p>
+      </div>
+      <div class="divider"></div>
+      <div class="col" lang="ne"> <!-- lang="ne" tells browsers this text is Nepali -->
+        <h2>सेन्ट जेभियर्स कलेज</h2> <!-- h2 so the page has only one h1 -->
+        <p>माईतीघर, काठमाडौं, नेपाल</p>
+        <p>पो.ब.नं. : ७४३७</p>
+        <p>फोन : ४२२१३६५, ४२४४६३६</p>
+        <p>ईमेल : ktm@sxc.edu.np</p>
+      </div>
+    </header>
+    <main> <!-- middle section: logo, then lab title directly below it -->
+      <img src="logo.png" alt="St. Xavier's College logo" width="220"> <!-- ../ goes up out of lab1, then into assests -->
+      <h2>LAB 1</h2> <!-- lab title directly below the logo -->
+      <h3>Working with HTML</h3>
+      <h3>Web Technology</h3>
+      <h3>Department of Computer Science</h3>
+    </main>
+    <footer> <!-- bottom section: two side-by-side boxes -->
+      <div class="box">
+        <h3>Submitted By:</h3>
+        <p>Saugat Tamang<br>Roll No.: 024BSCIT036<br>Semester: 5<sup>th</sup><br>Section: B</p> <!-- sup makes th small and raised -->
+      </div>
+      <div class="box">
+        <h3>Submitted To:</h3>
+        <p>Mr. Sudhir Maharjan<br>Department of Computer Science<br>St. Xavier’s College</p>
+        <p>Signature:</p>
+        <div class="line"></div> <!-- empty block with a bottom border, this is the signature line -->
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
